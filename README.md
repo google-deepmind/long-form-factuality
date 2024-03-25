@@ -5,7 +5,7 @@ This repository contains:
 
 1. LongFact: A prompt set of 2,280 fact-seeking prompts requiring long-form responses.
 2. Search-Augmented Factuality Evaluator (SAFE): Automatic evaluation of model responses in long-form factuality settings.
-3. F1@K: EXtending F1 score to long-form settings using recall from human-perferred length.
+3. F1@K: Extending F1 score to long-form settings using recall from human-perferred length.
 4. Experimentation pipeline for benchmarking OpenAI and Anthropic models using LongFact + SAFE.
 
 ## Installation

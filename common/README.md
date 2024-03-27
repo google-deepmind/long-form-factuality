@@ -50,6 +50,7 @@ We natively provide support for the following models:
 - GPT-3.5-Turbo-16K (`gpt-3.5-turbo-16k-0613`)
 - Claude-3-Opus (`claude-3-opus-20240229`)
 - Claude-3-Sonnet (`claude-3-sonnet-20240229`)
+- Claude-3-Haiku (`claude-3-haiku-20240307`)
 - Claude-2.1 (`claude-2.1`)
 - Claude-2.0 (`claude-2.0`)
 - Claude-Instant (`claude-instant-1.2`)

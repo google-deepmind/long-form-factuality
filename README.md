@@ -16,6 +16,11 @@ First, clone our GitHub repository.
 git clone https://github.com/google-deepmind/long-form-factuality.git
 ```
 
+Then navigate to the newly-created folder.
+```bash
+cd long-form-factuality
+```
+
 Next, create a new Python 3.10+ environment using `conda`.
 
 ```bash

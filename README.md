@@ -1,6 +1,6 @@
 # Long-Form Factuality in Large Language Models
 
-This is the official code release accompanying our paper, "Long-form factuality in large language models."
+This is the official code release accompanying our paper, ["Long-form factuality in large language models."](https://arxiv.org/abs/2403.18802)
 This repository contains:
 
 1. LongFact: A prompt set of 2,280 fact-seeking prompts requiring long-form responses.
@@ -98,6 +98,7 @@ If you find our code useful, please cite:
   title={Long-form factuality in large language models},
   author={Jerry Wei and Chengrun Yang and Xinying Song and Yifeng Lu and Nathan Hu and Dustin Tran and Daiyi Peng and Ruibo Liu and Da Huang and Cosmo Du and Quoc V. Le},
   year={2024},
+  url={https://arxiv.org/abs/2403.18802},
 }
 ```
 

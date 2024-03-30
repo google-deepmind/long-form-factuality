@@ -1,12 +1,12 @@
 # Long-Form Factuality in Large Language Models
 
-This is the official code release accompanying our paper, ["Long-form factuality in large language models."](https://arxiv.org/abs/2403.18802)
+This is the official code release accompanying our paper ["Long-form factuality in large language models"](https://arxiv.org/abs/2403.18802).
 This repository contains:
 
-1. LongFact: A prompt set of 2,280 fact-seeking prompts requiring long-form responses.
-2. Search-Augmented Factuality Evaluator (SAFE): Automatic evaluation of model responses in long-form factuality settings.
-3. F1@K: Extending F1 score to long-form settings using recall from human-preferred length.
-4. Experimentation pipeline for benchmarking OpenAI and Anthropic models using LongFact + SAFE.
+1. **LongFact**: A prompt set of 2,280 fact-seeking prompts requiring long-form responses.
+2. **Search-Augmented Factuality Evaluator (SAFE)**: Automatic evaluation of model responses in long-form factuality settings.
+3. **F1@K**: Extending F1 score to long-form settings using recall from human-preferred length.
+4. **Experimentation pipeline** for benchmarking OpenAI and Anthropic models using LongFact + SAFE.
 
 ## Installation
 
@@ -91,14 +91,14 @@ python -m unittest discover -s ./ -p "*_test.py"
 
 ## Citing this work
 
-If you find our code useful, please cite:
+If you find our code useful, please cite our [paper](https://arxiv.org/abs/2403.18802):
 
-```
-@misc{wei2024long,
+```bibtex
+@article{wei2024long,
   title={Long-form factuality in large language models},
-  author={Jerry Wei and Chengrun Yang and Xinying Song and Yifeng Lu and Nathan Hu and Jie Huang and Dustin Tran and Daiyi Peng and Ruibo Liu and Da Huang and Cosmo Du and Quoc V. Le},
-  year={2024},
-  url={https://arxiv.org/abs/2403.18802},
+  author={Wei, Jerry and Yang, Chengrun and Song, Xinying and Lu, Yifeng and Hu, Nathan and Huang, Jie and Tran, Dustin and Peng, Daiyi and Liu, Ruibo and Huang, Da and Du, Cosmo and Le, Quoc V},
+  journal={arXiv preprint arXiv:2403.18802},
+  year={2024}
 }
 ```
 

@@ -96,7 +96,7 @@ If you find our code useful, please cite:
 ```
 @misc{wei2024long,
   title={Long-form factuality in large language models},
-  author={Jerry Wei and Chengrun Yang and Xinying Song and Yifeng Lu and Nathan Hu and Dustin Tran and Daiyi Peng and Ruibo Liu and Da Huang and Cosmo Du and Quoc V. Le},
+  author={Jerry Wei and Chengrun Yang and Xinying Song and Yifeng Lu and Nathan Hu and Jie Huang and Dustin Tran and Daiyi Peng and Ruibo Liu and Da Huang and Cosmo Du and Quoc V. Le},
   year={2024},
   url={https://arxiv.org/abs/2403.18802},
 }

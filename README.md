@@ -94,11 +94,11 @@ python -m unittest discover -s ./ -p "*_test.py"
 If you find our code useful, please cite our [paper](https://arxiv.org/abs/2403.18802):
 
 ```bibtex
-@article{wei2024long,
+@misc{wei2024long,
   title={Long-form factuality in large language models},
-  author={Wei, Jerry and Yang, Chengrun and Song, Xinying and Lu, Yifeng and Hu, Nathan and Huang, Jie and Tran, Dustin and Peng, Daiyi and Liu, Ruibo and Huang, Da and Du, Cosmo and Le, Quoc V},
-  journal={arXiv preprint arXiv:2403.18802},
-  year={2024}
+  author={Wei, Jerry and Yang, Chengrun and Song, Xinying and Lu, Yifeng and Hu, Nathan and Huang, Jie and Tran, Dustin and Peng, Daiyi and Liu, Ruibo and Huang, Da and Du, Cosmo and Le, Quoc V.},
+  year={2024},
+  url={https://arxiv.org/abs/2403.18802},
 }
 ```
 

@@ -101,7 +101,7 @@ thinc==8.2.2
 threadpoolctl==3.2.0
 tokenizers==0.15.1
 torch==2.2.0
-tqdm==4.66.1
+tqdm==4.66.3
 transformers==4.37.2
 triton==2.2.0
 typer==0.9.0

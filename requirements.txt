@@ -80,7 +80,7 @@ pytz==2024.1
 PyYAML==6.0.1
 rank-bm25==0.2.2
 regex==2023.12.25
-requests==2.31.0
+requests==2.32.0
 rsa==4.9
 safetensors==0.4.2
 scikit-learn==1.4.0

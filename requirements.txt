@@ -107,7 +107,7 @@ triton==2.2.0
 typer==0.9.0
 typing_extensions==4.9.0
 tzdata==2023.4
-urllib3==2.2.0
+urllib3==2.2.2
 wasabi==1.1.2
 weasel==0.3.4
 yarl==1.9.4

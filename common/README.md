@@ -43,6 +43,8 @@ This postamble can be modified by setting the `prompt_postamble` variable in `sh
 **Supporting additional models**
 
 We natively provide support for the following models:
+- GPT-4o-mini (`gpt-4o-mini-2024-07-18`)
+- GPT-4o (`gpt-4o-2024-05-13`)
 - GPT-4-Turbo (`gpt-4-0125-preview`)
 - GPT-4 (`gpt-4-0613`)
 - GPT-4-32K (`gpt-4-32k-0613`)

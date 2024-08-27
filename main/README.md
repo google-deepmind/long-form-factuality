@@ -50,6 +50,8 @@ The default configuration is set to use `GPT-3.5-Turbo` to respond to prompts.
 To use any other model, simply copy-paste the desired model into the `responder_model_short` variable in `config.py`.
 If a model that you would like to test on is not listed in the currently-supported models, see the README in the `common/` folder for information on how to add support for additional models.
 Currently-supported models:
+- `gpt_4o_mini`: links to `gpt-4o-mini-2024-07-18`.
+- `gpt_4o`: links to `gpt-4o-2024-05-13`.
 - `gpt_4_turbo`: links to `gpt-4-0125-preview`.
 - `gpt_4`: links to `gpt-4-0613`.
 - `gpt_4_32k`: links to `gpt-4-32k-0613`.

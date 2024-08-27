@@ -34,6 +34,8 @@ ACCEPTED_METHODS = (
     'none',
 )
 ACCEPTED_MODELS = (
+    'gpt_4o_mini',
+    'gpt_4o',
     'gpt_4_turbo',
     'gpt_4',
     'gpt_4_32k',

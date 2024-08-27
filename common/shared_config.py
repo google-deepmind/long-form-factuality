@@ -39,6 +39,8 @@ anthropic_api_key = ''
 serper_api_key = ''
 random_seed = 1
 model_options = {
+    'gpt_4o_mini': 'OPENAI:gpt-4o-mini-2024-07-18',
+    'gpt_4o': 'OPENAI:gpt-4o-2024-05-13',
     'gpt_4_turbo': 'OPENAI:gpt-4-0125-preview',
     'gpt_4': 'OPENAI:gpt-4-0613',
     'gpt_4_32k': 'OPENAI:gpt-4-32k-0613',
@@ -52,6 +54,8 @@ model_options = {
     'claude_instant': 'ANTHROPIC:claude-instant-1.2',
 }
 model_string = {
+    'gpt_4o_mini': 'gpt4omini',
+    'gpt_4o': 'gpt4o',
     'gpt_4_turbo': 'gpt4turbo',
     'gpt_4': 'gpt4',
     'gpt_4_32k': 'gpt432k',

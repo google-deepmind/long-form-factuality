@@ -26,6 +26,8 @@ from eval.safe import config
 # pylint: enable=g-bad-import-order
 
 _SUPPORTED_MODELS = (
+    'gpt_4o_mini'
+    'gpt_4o'
     'gpt_4_turbo',
     'gpt_4',
     'gpt_4_32k',

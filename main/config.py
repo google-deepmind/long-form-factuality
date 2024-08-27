@@ -40,6 +40,8 @@ save_results = True
 #                               MODEL SETTINGS
 # responder_model_short: str = model for getting structures.
 # Currently supported models (copy-paste into fields): [
+#     'gpt_4o_mini',
+#     'gpt_4o',
 #     'gpt_4_turbo',
 #     'gpt_4',
 #     'gpt_4_32k',

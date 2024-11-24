@@ -32,18 +32,21 @@ from common import shared_config
 #     'claude_21',
 #     'claude_20',
 #     'claude_instant',
+#     'claude_35_sonnet',
+#     'gpt_4o-mini',
+#     'gpt_4o',
 # ]
 ################################################################################
-model_short = 'gpt_35_turbo'
+model_short = 'gpt_4o-mini'
 model_temp = 0.1
 max_tokens = 512
 
 ################################################################################
 #                              SEARCH SETTINGS
-# search_type: str = Google Search API used. Choose from ['serper'].
+# search_type: str = Google Search API used. Choose from ['serper','searxng'].
 # num_searches: int = Number of results to show per search.
 ################################################################################
-search_type = 'serper'
+search_type = 'searxng'
 num_searches = 3
 
 ################################################################################

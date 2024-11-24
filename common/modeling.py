@@ -40,6 +40,7 @@ _ANTHROPIC_MODELS = [
     'claude-2.1',
     'claude-2.0',
     'claude-instant-1.2',
+    'claude-3.5-sonnet-20241022'
 ]
 
 
@@ -53,7 +54,11 @@ class Usage(pg.Object):
 class LMSamplingResult(lf.LMSamplingResult):
   """LMSamplingResult with usage information."""
 
-  usage: Usage | None = None
+  usage: Annotated[
+      lf.LMSamplingUsage,
+      'Usage information. Currently only OpenAI models are supported.',
+  ] = lf.UsageNotAvailable()
+
 
 
 @lf.use_init_args(['model'])

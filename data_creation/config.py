@@ -31,9 +31,12 @@ from common import shared_config
 #     'claude_21',
 #     'claude_20',
 #     'claude_instant',
+#    'claude_35_sonnet',
+#    'gpt_4o-mini',
+#    'gpt_4o',
 # ]
 ################################################################################
-generator_model = 'gpt_4'
+generator_model = 'gpt_4o-mini'
 generation_temp = 1.0
 
 ################################################################################

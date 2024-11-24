@@ -97,6 +97,8 @@ def call_search(
   if search_type == 'serper':
     serper_searcher = query_serper.SerperAPI(serper_api_key, k=num_searches)
     return serper_searcher.run(search_query, k=num_searches)
+
+  
   else:
     raise ValueError(f'Unsupported search type: {search_type}')
 

@@ -14,7 +14,7 @@
 """Shared configuration across all project code."""
 
 import os
-
+import dotenv
 
 ################################################################################
 #                         FORCED SETTINGS, DO NOT EDIT
@@ -30,13 +30,16 @@ import os
 # path_to_data: str = directory storing task information.
 # path_to_result: str = directory to output results.
 ################################################################################
+dotenv.load_dotenv()
 prompt_postamble = """\
 Provide as many specific details and examples as possible (such as names of \
 people, numbers, events, locations, dates, times, etc.)
 """
-openai_api_key = ''
-anthropic_api_key = ''
+openai_api_key = os.environ.get('OPEN_AI_KEY', '')
+anthropic_api_key = os.environ.get('ANTHROPIC_API_KEY', '')
 serper_api_key = ''
+searxng_api_key = os.environ.get('SEARXNG_API_KEY', '')
+searxng_url = os.environ.get('SEARXNG_URL', '')
 random_seed = 1
 model_options = {
     'gpt_4_turbo': 'OPENAI:gpt-4-0125-preview',
@@ -50,6 +53,10 @@ model_options = {
     'claude_21': 'ANTHROPIC:claude-2.1',
     'claude_20': 'ANTHROPIC:claude-2.0',
     'claude_instant': 'ANTHROPIC:claude-instant-1.2',
+    'claude_35_sonnet': 'ANTHROPIC:claude-3.5-sonnet-20241022',
+    'gpt_4o-mini': 'OPENAI:gpt-4o-mini',
+    'gpt_4o': 'OPENAI:gpt-4o',
+
 }
 model_string = {
     'gpt_4_turbo': 'gpt4turbo',
@@ -62,6 +69,9 @@ model_string = {
     'claude_21': 'claude21',
     'claude_20': 'claude20',
     'claude_instant': 'claudeinstant',
+    'claude_35_sonnet': 'claude35sonnet',
+    'gpt_4o-mini': 'gpt4omini',
+    'gpt_4o': 'gpt4o',
 }
 task_options = {}
 root_dir = '/'.join(os.path.abspath(__file__).split('/')[:-2])

@@ -48,8 +48,9 @@ from common import utils
 from eval import metric_utils
 from eval.safe import config as safe_config
 from eval.safe import get_atomic_facts
-from eval.safe import search_augmented_factuality_eval as safe
+from eval.safe import search_augmented_factuality_eval2 as safe
 # pylint: enable=g-bad-import-order
+
 
 _SAMPLES = flags.DEFINE_integer(
     'samples', default=-1, help='Number of samples to eval.'
@@ -523,8 +524,8 @@ def main(_) -> None:
   }
 
   for do_step, step_name in [
-      (_EVAL_IDENTIFY_ATOMIC_FACTS_ABLATED.value, IDENTIFY_FACTS),
-      (_EVAL_RATE_ATOMIC_FACTS_ABLATED.value, RATE_FACTS),
+      #(_EVAL_IDENTIFY_ATOMIC_FACTS_ABLATED.value, IDENTIFY_FACTS),
+      #(_EVAL_RATE_ATOMIC_FACTS_ABLATED.value, RATE_FACTS), 
       (_EVAL_ENTIRE_SAFE.value, ENTIRE_AUTORATER)
   ]:
     if not do_step:

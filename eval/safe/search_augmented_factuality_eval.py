@@ -113,6 +113,7 @@ def classify_relevance_and_rate_single(
     )
     return checked_statement, revised_fact_dict, {}
 
+## update to use rate_atomic_fact2.py
   rate_data, past_steps_dict = rate_atomic_fact.check_atomic_fact(
       atomic_fact=self_contained_atomic_fact, rater=rater
   )

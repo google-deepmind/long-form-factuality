@@ -36,6 +36,9 @@ _ACCEPTED_MODELS = (
     'claude_21',
     'claude_20',
     'claude_instant',
+    'claude_35_sonnet',
+    'gpt_4o-mini',
+    'gpt_4o',
 )
 _ACCEPTED_SUBTASKS = ('longfact_concepts', 'longfact_objects')
 

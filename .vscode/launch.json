@@ -1,0 +1,102 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Run Evaluation",
+            "type": "python",
+            "request": "launch",
+            "module": "eval.run_eval",
+            "python": "${workspaceFolder}/venv/bin/python",  // For macOS/Linux
+            // "python": "${workspaceFolder}\\venv\\Scripts\\python.exe",  // For Windows (uncomment this line and comment the above if on Windows)
+            "args": [
+                "--result_path", "${input:resultPath}",
+                "--eval_side1", "True",
+                "--eval_side2", "True",
+                "--parallelize", "True",
+                "--max_claim", "-1"
+            ],
+            "justMyCode": true,
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            },
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Python: Correlation vs Factscore",
+            "type": "python",
+            "request": "launch",
+            "program": "-m",
+            "args": [
+                "eval.correlation_vs_factscore",
+                "--samples", "${input:samples}",
+                "--eval_in_parallel", "True",
+                "--save_results", "True",
+                "--eval_identify_atomic_facts_ablated", "${input:eval_identify_atomic_facts_ablated}",
+                "--eval_rate_atomic_facts_ablated", "${input:eval_rate_atomic_facts_ablated}",
+                "--eval_entire_safe", "${input:eval_entire_safe}"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            }
+        }
+    ],
+    "inputs": [
+        {
+            "id": "resultPath",
+            "type": "promptString",
+            "description": "Enter the path to result",
+            "default": "./results"
+        },
+        {
+            "id": "samples",
+            "type": "promptString",
+            "description": "Enter the number of samples",
+            "default": "100"
+        },
+        {
+            "id": "eval_in_parallel",
+            "type": "promptString",
+            "description": "Enter the number of samples",
+            "default": "True"
+        },
+        {
+            "id": "save_results",
+            "type": "promptString",
+            "description": "Enter the number of samples",
+            "default": "True"
+        },
+        {
+            "id":"eval_entire_safe",
+            "type":"pickString",
+            "description":"Run Entire SAFE",
+            "default":"True",
+            "options":[
+                "True",
+                "False"
+            ]
+        },
+        {
+            "id":"eval_rate_atomic_facts_ablated",
+            "type":"pickString",
+            "description":"Run Rate Atomic Facts",
+            "default":"True",
+            "options":[
+                "True",
+                "False"
+            ]
+        }, 
+        {
+            "id":"eval_identify_atomic_facts_ablated",
+            "type":"pickString",
+            "description":"Run Indentify Atomic Facts",
+            "default":"True",
+            "options":[
+                "True",
+                "False"
+            ]
+        },
+    ]
+}

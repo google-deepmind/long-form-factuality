@@ -79,8 +79,17 @@ class AtomicFactGenerator(object):
   ):
     self.nlp = SPACY_MODEL
     self.is_bio = True
+    '''
+    @Todo 
     self.demon_path = os.path.join(
         demon_dir, 'demons.json' if self.is_bio else 'demons_complex.json'
+    )
+    '''
+   # ... existing code ...
+    os.path.join(
+        os.path.dirname(os.path.abspath(__file__)), 
+        demon_dir, 
+        'demons.json' if self.is_bio else 'demons_complex.json'
     )
     self.other_lm = other_lm
     self.api_key = api_key

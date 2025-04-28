@@ -25,6 +25,7 @@ import anthropic
 import langfun as lf
 import openai
 import pyglove as pg
+import google.generativeai as genai
 
 # pylint: disable=g-bad-import-order
 from common import modeling_utils
@@ -160,6 +161,28 @@ class AnthropicModel(lf.LanguageModel):
     )
 
 
+class GeminiModel(lf.LanguageModel):
+  """Class for storing a Gemini model."""
+
+  def __init__(
+      self,
+      model: str,
+      api_key: str,
+      sampling_options: Optional[lf.LMSamplingOptions] = None,
+  ) -> None:
+    """Initializes a Gemini model."""
+    super().__init__(sampling_options)
+    self.model = model
+    self.api_key = api_key
+    genai.configure(api_key=self.api_key)
+    self.client = genai.GenerativeModel(model_name=self.model)
+
+  def generate(self, prompt: str) -> str:
+    """Generates a response to a prompt."""
+    response = self.client.generate_content(prompt)
+    return response.text
+
+
 class Model:
   """Class for storing any single language model."""
 
@@ -205,6 +228,16 @@ class Model:
       return AnthropicModel(
           model=model_name[10:],
           api_key=shared_config.anthropic_api_key,
+          sampling_options=sampling,
+      )
+    elif model_name.lower().startswith('google:'):
+      if not shared_config.google_api_key:
+        utils.maybe_print_error('No Google API Key specified.')
+        utils.stop_all_execution(True)
+
+      return GeminiModel(
+          model=model_name[7:],
+          api_key=shared_config.google_api_key,
           sampling_options=sampling,
       )
     elif 'unittest' == model_name.lower():

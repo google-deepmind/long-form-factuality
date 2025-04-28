@@ -37,6 +37,7 @@ people, numbers, events, locations, dates, times, etc.)
 openai_api_key = ''
 anthropic_api_key = ''
 serper_api_key = ''
+google_api_key = ''
 random_seed = 1
 model_options = {
     'gpt_4_turbo': 'OPENAI:gpt-4-0125-preview',
@@ -47,9 +48,11 @@ model_options = {
     'claude_3_opus': 'ANTHROPIC:claude-3-opus-20240229',
     'claude_3_sonnet': 'ANTHROPIC:claude-3-sonnet-20240229',
     'claude_3_haiku': 'ANTHROPIC:claude-3-haiku-20240307',
+    'claude_37_sonnet': 'ANTHROPIC:claude-3.7-sonnet-20240307',
     'claude_21': 'ANTHROPIC:claude-2.1',
     'claude_20': 'ANTHROPIC:claude-2.0',
     'claude_instant': 'ANTHROPIC:claude-instant-1.2',
+    'gemini_25_pro': 'GOOGLE:gemini-2.5-pro',
 }
 model_string = {
     'gpt_4_turbo': 'gpt4turbo',
@@ -59,9 +62,11 @@ model_string = {
     'gpt_35_turbo_16k': 'gpt35turbo16k',
     'claude_3_opus': 'claude3opus',
     'claude_3_sonnet': 'claude3sonnet',
+    'claude_37_sonnet': 'claude37sonnet',
     'claude_21': 'claude21',
     'claude_20': 'claude20',
     'claude_instant': 'claudeinstant',
+    'gemini_25_pro': 'gemini25pro',
 }
 task_options = {}
 root_dir = '/'.join(os.path.abspath(__file__).split('/')[:-2])

@@ -42,9 +42,11 @@ ACCEPTED_MODELS = (
     'claude_3_opus',
     'claude_3_sonnet',
     'claude_3_haiku',
+    'claude_37_sonnet',
     'claude_21',
     'claude_20',
     'claude_instant',
+    'gemini_25_pro',
 )
 ACCEPTED_TASKS = (
     'custom',

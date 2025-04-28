@@ -33,9 +33,11 @@ _SUPPORTED_MODELS = (
     'gpt_35_turbo_16k',
     'claude_3_opus',
     'claude_3_sonnet',
+    'claude_37_sonnet',
     'claude_21',
     'claude_20',
     'claude_instant',
+    'gemini_25_pro',
 )
 _SUPPORTED_SEARCH_TYPES = ('serper')
 

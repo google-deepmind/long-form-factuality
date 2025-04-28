@@ -24,6 +24,7 @@ from unittest import mock
 
 from absl.testing import absltest
 import langfun as lf
+import google.generativeai as genai
 
 # pylint: disable=g-bad-import-order
 from common import modeling
@@ -191,6 +192,72 @@ class ModelingTest(absltest.TestCase):
     mock_load.assert_called_once()
     mock_print.assert_called_once_with(str(test_config_dict))
     mock_to_readable_json.assert_called_once()
+
+  @mock.patch('google.generativeai.configure')
+  @mock.patch('google.generativeai.GenerativeModel')
+  def test_gemini_model_init(self, mock_gen_model: mock.Mock, mock_configure: mock.Mock) -> None:
+    test_model = 'gemini-2.5-pro'
+    test_api_key = 'test_api_key'
+    test_sampling = lf.LMSamplingOptions(temperature=0.5, max_tokens=1024)
+    
+    gemini_model = modeling.GeminiModel(
+        model=test_model,
+        api_key=test_api_key,
+        sampling_options=test_sampling
+    )
+    
+    self.assertEqual(gemini_model.model, test_model)
+    self.assertEqual(gemini_model.api_key, test_api_key)
+    mock_configure.assert_called_once_with(api_key=test_api_key)
+    mock_gen_model.assert_called_once_with(model_name=test_model)
+
+  @mock.patch('google.generativeai.configure')
+  @mock.patch('google.generativeai.GenerativeModel')
+  def test_gemini_model_generate(self, mock_gen_model: mock.Mock, mock_configure: mock.Mock) -> None:
+    test_model = 'gemini-2.5-pro'
+    test_api_key = 'test_api_key'
+    test_prompt = 'test prompt'
+    test_response = 'test response'
+    
+    mock_gen_model_instance = mock.Mock()
+    mock_gen_model.return_value = mock_gen_model_instance
+    mock_gen_model_instance.generate_content.return_value = mock.Mock(text=test_response)
+    
+    gemini_model = modeling.GeminiModel(
+        model=test_model,
+        api_key=test_api_key
+    )
+    
+    response = gemini_model.generate(test_prompt)
+    
+    self.assertEqual(response, test_response)
+    mock_gen_model_instance.generate_content.assert_called_once_with(test_prompt)
+
+  @mock.patch('common.modeling.Model.load')
+  def test_model_load_google(self, mock_load: mock.Mock) -> None:
+    test_model_name = 'GOOGLE:gemini-2.5-pro'
+    test_temp = 0.5
+    test_max_tokens = 1024
+    
+    model = modeling.Model(test_model_name, test_temp, test_max_tokens)
+    
+    mock_load.assert_called_once_with(test_model_name, test_temp, test_max_tokens)
+    self.assertIsInstance(model.model, lf.LanguageModel)
+
+  @mock.patch('common.utils.maybe_print_error')
+  @mock.patch('common.utils.stop_all_execution')
+  def test_model_load_google_no_api_key(
+      self, mock_stop: mock.Mock, mock_print_error: mock.Mock
+  ) -> None:
+    test_model_name = 'GOOGLE:gemini-2.5-pro'
+    test_temp = 0.5
+    test_max_tokens = 1024
+    
+    with self.assertRaises(ValueError):
+      modeling.Model(test_model_name, test_temp, test_max_tokens)
+    
+    mock_print_error.assert_called_once()
+    mock_stop.assert_called_once_with(True)
 
 
 if __name__ == '__main__':

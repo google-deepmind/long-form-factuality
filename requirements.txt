@@ -22,7 +22,7 @@ docstring-parser==0.15
 en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1-py3-none-any.whl#sha256=86cc141f63942d4b2c5fcee06630fd6f904788d2f0ab005cce45aadb8fb73889
 exceptiongroup==1.2.0
 filelock==3.13.1
-fonttools==4.47.2
+fonttools==4.61.0
 frozenlist==1.4.1
 fsspec==2023.12.2
 google-ai-generativelanguage==0.4.0

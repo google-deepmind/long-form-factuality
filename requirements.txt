@@ -69,7 +69,7 @@ pillow==10.2.0
 preshed==3.0.9
 proto-plus==1.23.0
 protobuf==4.25.2
-pyasn1==0.5.1
+pyasn1==0.6.3
 pyasn1-modules==0.3.0
 pydantic==2.6.0
 pydantic_core==2.16.1

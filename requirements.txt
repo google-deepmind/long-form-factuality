@@ -65,7 +65,7 @@ nvidia-nvtx-cu12==12.1.105
 openai==0.27.2
 packaging==23.2
 pandas==2.2.0
-pillow==10.2.0
+pillow==12.2.0
 preshed==3.0.9
 proto-plus==1.23.0
 protobuf==4.25.2

@@ -100,7 +100,7 @@ termcolor==1.1.0
 thinc==8.2.2
 threadpoolctl==3.2.0
 tokenizers==0.15.1
-torch==2.2.0
+torch==2.8.0
 tqdm==4.66.1
 transformers==4.37.2
 triton==2.2.0

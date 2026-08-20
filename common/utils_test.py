@@ -21,6 +21,7 @@ python -m common.utils_test
 
 import copy
 import os
+import tempfile
 import types
 from unittest import mock
 
@@ -189,6 +190,12 @@ class UtilsTest(absltest.TestCase):
     }
     actual_output = utils.get_attributes(mock_module)
     self.assertEqual(actual_output, expected_output)
+
+  def test_make_directory_wrapped(self) -> None:
+    with tempfile.TemporaryDirectory() as tmpdir:
+      filepath = os.path.join(tmpdir, 'nested', 'subdir', 'file.json')
+      utils.make_directory_wrapped(filepath)
+      self.assertTrue(os.path.isdir(os.path.dirname(filepath)))
 
   @mock.patch('common.utils.open_file_wrapped')
   @mock.patch('json.load')

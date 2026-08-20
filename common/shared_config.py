@@ -64,6 +64,6 @@ model_string = {
     'claude_instant': 'claudeinstant',
 }
 task_options = {}
-root_dir = '/'.join(os.path.abspath(__file__).split('/')[:-2])
+root_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 path_to_data = 'datasets/'
 path_to_result = 'results/'

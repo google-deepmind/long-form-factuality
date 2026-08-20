@@ -136,7 +136,7 @@ def file_exists_wrapped(filepath: str, **kwargs) -> bool:
 
 
 def make_directory_wrapped(filepath: str, **kwargs) -> None:
-  folder_name = '/'.join(filepath.split('/')[:-1])
+  folder_name = os.path.dirname(filepath)
   os.makedirs(folder_name, exist_ok=True, **kwargs)
 
 
